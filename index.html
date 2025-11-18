@@ -12,28 +12,31 @@
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:site" content="@Re_menal2" />
 	<meta property="og:url" content="https://remenal.github.io/Apps/integrals/index.html" />
-	<meta property="og:title" content="ランダム積分" />
-	<meta property="og:description" content="様々な積分の問題をランダムに出題するサイトです。" />
+	<meta property="og:title" content="ランダム微分方程式" />
+	<meta property="og:description" content="様々な微分方程式の問題をランダムに出題するサイトです。" />
 	<meta property="og:image" content="integrals.png" />
-  <title>ランダム積分</title>
+  <title>ランダム微分方程式</title>
 </head>
 <body>
 		<main>
-				<p class="title">ランダム積分</p>
-				<div class="content">
-					<aside class="filters">
-						<p class="filter-title">解法一覧</p>
-						<div id="tag-filters" class="tag-list"></div>
-					</aside>
-					<div class="box">
-						<button id="show">表示</button>
-						<div id="eq">$$\displaystyle \int \mathrm{Let}'(s,\ \mathrm{integral}!)\ ds$$</div>
-						<div id="answer">解説：<a id="link" href="">Link</a></div>
+				<p class="title">ランダム微分方程式</p>
+					<div class="content">
+						<aside class="filters">
+							<p class="filter-title">解法一覧</p>
+							<div id="tag-filters" class="tag-list"></div>
+							<p class="filter-title">難易度</p>
+							<div id="difficulty-filters" class="tag-list"></div>
+						</aside>
+						<div class="box">
+							<button id="show">表示</button>
+								<div id="eq">$$\displaystyle \frac{d^2y}{dx^2}+y=0$$</div>
+								<div id="answer">解説：<a id="link" href="">Link</a></div>
+						</div>
 					</div>
-				</div>
 				<a class="about" href="about.html">詳細情報</a>
 		</main>
-		<script src="integrals.js" type="module"></script>
+		<script src="data.js"></script>
+		<script src="integrals.js"></script>
 		<script>
 		  renderMathInElement(
 		    document.body,

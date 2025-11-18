@@ -1,106 +1,131 @@
 "use strict";
 
-// integrals : { expression, link, tags }
+// 適当に解ける簡単な微分方程式の例
 // link : 0 -> 準備中
-export const data = [
+// ブラウザ上で直接開いても読み込めるようにグローバル変数で公開する
+const integralsData = [
   {
-    expression: String.raw`\int_0^{\frac{\pi}2}\cos\log\tan x \ dx`,
+    expression: String.raw`\frac{dy}{dx}+y=0`,
     link: 0,
-    tags: ['置換', '三角・双曲線の恒等変形']
+    tags: ['1階線形', '斉次', '定数係数'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_0^\infty\frac{e^{\frac16x}+e^{\frac56x}-2e^{\frac12x}}{x(e^x-1)}\ dx`,
+    expression: String.raw`\frac{dy}{dx}=x-y`,
     link: 0,
-    tags: ['級数展開']
+    tags: ['1階線形', '非斉次', '定数係数'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_0^\infty\frac{x^2e^{\frac12x}}{e^x+1}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}+y=0`,
     link: 0,
-    tags: ['級数展開']
+    tags: ['2階線形', '斉次', '定数係数'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_0^\infty\frac{1-\text{tanh}x}{\sqrt{\text{tanh}x}}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}-4y=0`,
     link: 0,
-    tags: ['置換', '三角・双曲線の恒等変形']
+    tags: ['2階線形', '斉次', '定数係数'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_0^\infty\frac{\sin \log \tan x}{\log \tan x}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}+2\frac{dy}{dx}+y=0`,
     link: 0,
-    tags: ['フーリエ・直交展開', '三角・双曲線の恒等変形']
+    tags: ['2階線形', '斉次', '定数係数'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^\infty\frac1{\sqrt{x}(x+1)}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}-\frac{dy}{dx}-2y=0`,
     link: 0,
-    tags: ['置換', 'ベータ・ガンマ']
+    tags: ['2階線形', '斉次', '定数係数'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^1 \frac{\log x}{\sqrt{x}(1+x)}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}+4\frac{dy}{dx}+13y=0`,
     link: 0,
-    tags: ['部分積分', 'ベータ・ガンマ']
+    tags: ['2階線形', '斉次', '定数係数'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int\prod_{i=0}^n\frac1{\log^ix}\ dx`,
+    expression: String.raw`\frac{dy}{dx}=y(1-y)`,
     link: 0,
-    tags: ['置換']
+    tags: ['1階非線形', 'ロジスティック'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^{\frac{\pi}2}\frac{\cos \log \tan x\log \cos x}{\sin^2 x} \ dx`,
+    expression: String.raw`\frac{dy}{dx}=xy`,
     link: 0,
-    tags: ['積分の中で微分', '三角・双曲線の恒等変形']
+    tags: ['1階線形', '可分形'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_0^1 x\log \log \frac1x \ dx`,
+    expression: String.raw`\frac{dy}{dx}+3y=e^{2x}`,
     link: 0,
-    tags: ['積分の中で微分', 'ベータ・ガンマ']
+    tags: ['1階線形', '非斉次', '定数係数'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_{\frac{\pi}4}^{\frac{\pi}2}\frac{\cos x\sqrt{\log \tan x}}{\sin^3x}\ dx`,
+    expression: String.raw`x\frac{dy}{dx}+y=x^2`,
     link: 0,
-    tags: ['置換', '三角・双曲線の恒等変形']
+    tags: ['1階線形', '非斉次', '可分形'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^\infty\frac{\log x\log (1+x)}{x(1+x)}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}=\sin x`,
     link: 0,
-    tags: ['部分積分', '級数展開']
+    tags: ['2階線形', '非斉次', '定数係数'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_0^1 \frac{\log x\log (1+x)}{x(1-x)}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}+y=\cos x`,
     link: 0,
-    tags: ['部分積分', '級数展開']
+    tags: ['2階線形', '非斉次', '定数係数'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^{\frac{\pi}2}\frac{\log \cos x}{\tan x}\ dx`,
+    expression: String.raw`x^2\frac{d^2y}{dx^2}+x\frac{dy}{dx}-y=0`,
     link: 0,
-    tags: ['置換', '積分の中で微分', '三角・双曲線の恒等変形']
+    tags: ['2階線形', '斉次', 'オイラー型'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^\infty\frac{x\log \text{tanh}x}{\text{tanh}x }\ dx`,
+    expression: String.raw`x^2\frac{d^2y}{dx^2}-3x\frac{dy}{dx}+4y=0`,
     link: 0,
-    tags: ['級数展開', '三角・双曲線の恒等変形']
+    tags: ['2階線形', '斉次', 'オイラー型'],
+    difficulty: '上級'
   },
   {
-    expression: String.raw`\int_0^{\frac1{\sqrt{3}}}\frac{x\text{arctan}x}{(1-x^2)\sqrt{1-2x^2}}\ dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}+\frac{dy}{dx}=e^{-x}`,
     link: 0,
-    tags: ['置換']
+    tags: ['2階線形', '非斉次', '定数係数'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^{\pi}\log\left(\frac54+\cos x\right)\ dx`,
+    expression: String.raw`\frac{dy}{dx}=\sin x - y`,
     link: 0,
-    tags: ['フーリエ・直交展開']
+    tags: ['1階線形', '非斉次', '定数係数'],
+    difficulty: '初級'
   },
   {
-    expression: String.raw`\int_0^\infty\sqrt{-\log(1-e^x)}\ dx`,
+    expression: String.raw`\frac{dy}{dx}=\frac{y}{x}+\frac1{x^2}`,
     link: 0,
-    tags: ['級数展開', '置換']
+    tags: ['1階線形', '非斉次', '可分形'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_0^2\frac1{(x+2)\sqrt{x+1}} dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}-y = e^{x}`,
     link: 0,
-    tags: ['置換']
+    tags: ['2階線形', '非斉次', '定数係数'],
+    difficulty: '中級'
   },
   {
-    expression: String.raw`\int_1^2 \frac1{x\sqrt{1-\log^2x}} dx`,
+    expression: String.raw`\frac{d^2y}{dx^2}+9y = 3\sin 3x`,
     link: 0,
-    tags: ['置換']
+    tags: ['2階線形', '非斉次', '定数係数'],
+    difficulty: '上級'
   }
 ];
+
+// ES modules (import/export) は file:// で開いた際に CORS 制約に引っかかるため、
+// グローバルに積分データを展開して通常の <script> から参照させる。
+window.integralsData = integralsData;
