@@ -20,7 +20,7 @@ const integralsData = [
   {
     expression: String.raw`x\frac{dy}{dx} + y = 0`,
     link: 0,
-    tags: ['同次形'],
+    tags: ['変数分離形'],
     difficulty: '初級'
   },
   {
@@ -79,6 +79,12 @@ const integralsData = [
   },
   {
     expression: String.raw`\frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0`,
+    link: 0,
+    tags: ['線形'],
+    difficulty: '中級'
+  },
+  {
+    expression: String.raw`\frac{dy}{dx}=\frac{x^2+y^2}{xy}`,
     link: 0,
     tags: ['同次形'],
     difficulty: '中級'
