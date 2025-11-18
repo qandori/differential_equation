@@ -1,0 +1,164 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Noto+Serif+JP:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
+html {
+	font-size: 62.5%;
+	height: 100%;
+}
+body {
+	margin: 0;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+/* メイン */
+main {
+	width: 96%;
+	height: 95%;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #DEDEDE;
+}
+.content {
+	display: flex;
+	align-items: stretch;
+	gap: 2rem;
+	width: 92%;
+	flex: 1;
+}
+.filters {
+	width: 24rem;
+	min-width: 22rem;
+	background-color: #F3F3F3;
+	padding: 1.6rem;
+	box-sizing: border-box;
+	font-family: "Noto Sans JP", sans-serif;
+	color: #303030;
+}
+.filter-title {
+	margin: 0 0 1rem 0;
+	font-size: 1.8rem;
+	font-weight: 400;
+	letter-spacing: 0.2rem;
+}
+.tag-list {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+.tag-filter {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	font-size: 1.4rem;
+}
+.title {
+	margin: 5rem 0 7rem 0;
+	font-size: 5rem;
+	color: #303030;
+	font-family: "Noto Sans JP", sans-serif;
+	font-weight: 300;
+	letter-spacing: 2rem;
+	text-indent: 2rem;
+}
+/* 問題 */
+.box {
+	display: table;
+	text-align: center;
+	width: 100%;
+	height: 60vh;
+	position: relative;
+	align-items: center;
+	background-color: #F3F3F3;
+}
+button {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+  transform: translateX(-50%);
+	background-color: #303030;
+	display: inline-block;
+  padding: 0.7rem 2rem;
+
+  text-decoration: none;
+	border: none;
+  color: #ECECEC;
+  transition: .2s;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	letter-spacing: 1em;
+	text-indent: 1em;
+}
+button:hover{
+	background-color: #898989;
+}
+#eq {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 2.2rem;
+	color: #303030;
+}
+/* 解説 */
+#answer {
+	display: none;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+  transform: translateX(-50%);
+
+	font-size: 2rem;
+	font-family: "Noto Sans JP", sans-serif;
+	color: #303030;
+	letter-spacing: 1em;
+	text-indent: 1em;
+}
+#link {
+	padding: 0.2rem 1rem;
+	text-decoration: none;
+	letter-spacing: 0;
+	border-bottom: solid 2px #898989;
+	font-weight: 300;
+	color: #303030;
+	transition: .2s;
+}
+#link:hover{
+	color: #898989;
+}
+/* About */
+.about {
+	margin-top: 2rem;
+	border-left: solid 2px #303030;
+	border-right: solid 2px #303030;
+
+	text-decoration: none;
+	font-size: 1.6rem;
+	font-family: "Noto Sans JP", sans-serif;
+	color: #303030;
+	transition: .2s;
+	letter-spacing: 1.5rem;
+	margin-right: -1.5rem;
+	padding-left: 1.5rem;
+}
+.about:hover {
+	color: #898989;
+}
+.box p {
+	margin: 2rem 1.6rem;
+	text-align: left;
+	font-size: 1.6rem;
+	font-family: "Noto Sans JP", sans-serif;
+	color: #303030;
+}
+/* responsive */
+@media screen and (max-width: 480px) {
+	.content {flex-direction: column; width: 90%;}
+	.filters {width: 100%;}
+	.title {font-size: 3rem;}
+	button {font-size: 16px;}
+	#answer {font-size: 1.6rem; letter-spacing: 0; text-indent: 0;}
+	.about {font-size: 1.3rem;}
+}
