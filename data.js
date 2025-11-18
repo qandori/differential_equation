@@ -127,5 +127,5 @@ const integralsData = [
 ];
 
 // ES modules (import/export) は file:// で開いた際に CORS 制約に引っかかるため、
-// グローバルに積分データを展開して通常の <script> から参照させる。
+// グローバルに微分方程式データを展開して通常の <script> から参照させる。
 window.integralsData = integralsData;
