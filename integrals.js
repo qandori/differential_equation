@@ -5,11 +5,21 @@ const answer = document.getElementById('link');
 const answerContainer = document.getElementById('answer');
 const tagList = document.getElementById('tag-filters');
 const difficultyList = document.getElementById('difficulty-filters');
+const tagSelectAll = document.getElementById('tag-select-all');
+const tagClear = document.getElementById('tag-clear');
+const difficultySelectAll = document.getElementById('difficulty-select-all');
+const difficultyClear = document.getElementById('difficulty-clear');
 
-if (showButton && equation && answer && answerContainer && tagList && difficultyList) {
+if (
+  showButton && equation && answer && answerContainer &&
+  tagList && difficultyList &&
+  tagSelectAll && tagClear && difficultySelectAll && difficultyClear
+) {
   const data = Array.isArray(window.integralsData) ? window.integralsData : [];
   const activeTags = new Set();
   const activeDifficulties = new Set();
+  const tagCheckboxes = [];
+  const difficultyCheckboxes = [];
 
   // 利用可能なタグ一覧を生成（flatMap 非対応ブラウザ考慮で reduce を使用）
   const tags = Array.from(
@@ -34,6 +44,7 @@ if (showButton && equation && answer && answerContainer && tagList && difficulty
         activeTags.delete(tag);
       }
     });
+    tagCheckboxes.push(checkbox);
 
     const tagName = document.createElement('span');
     tagName.textContent = tag;
@@ -61,6 +72,7 @@ if (showButton && equation && answer && answerContainer && tagList && difficulty
         activeDifficulties.delete(level);
       }
     });
+    difficultyCheckboxes.push(checkbox);
 
     const name = document.createElement('span');
     name.textContent = level;
@@ -80,11 +92,47 @@ if (showButton && equation && answer && answerContainer && tagList && difficulty
     });
   };
 
+  const setAllTags = (checked) => {
+    tagCheckboxes.forEach(cb => {
+      cb.checked = checked;
+      if (checked) {
+        activeTags.add(cb.value);
+      } else {
+        activeTags.delete(cb.value);
+      }
+    });
+  };
+
+  const setAllDifficulties = (checked) => {
+    difficultyCheckboxes.forEach(cb => {
+      cb.checked = checked;
+      if (checked) {
+        activeDifficulties.add(cb.value);
+      } else {
+        activeDifficulties.delete(cb.value);
+      }
+    });
+  };
+
   function fnc() {
+    // 解法タグが未選択なら出題しない
+    if (activeTags.size === 0) {
+      equation.textContent = '解法タグを1つ以上選択してください。';
+      answerContainer.style.display = 'none';
+      return;
+    }
+
+    // 難易度タグが未選択なら出題しない
+    if (activeDifficulties.size === 0) {
+      equation.textContent = '難易度を1つ以上選択してください。';
+      answerContainer.style.display = 'none';
+      return;
+    }
+
     const pool = getFilteredData();
 
     if (pool.length === 0) {
-      equation.textContent = '該当する問題がありません。チェックを減らしてください。';
+      equation.textContent = '解法タグと難易度の組み合わせに該当する問題がありません。選択を見直してください。';
       answerContainer.style.display = 'none';
       return;
     }
@@ -117,4 +165,9 @@ if (showButton && equation && answer && answerContainer && tagList && difficulty
   }
 
   showButton.onclick = fnc;
+
+  tagSelectAll.addEventListener('click', () => setAllTags(true));
+  tagClear.addEventListener('click', () => setAllTags(false));
+  difficultySelectAll.addEventListener('click', () => setAllDifficulties(true));
+  difficultyClear.addEventListener('click', () => setAllDifficulties(false));
 }

@@ -65,6 +65,28 @@ main {
 	text-indent: 2rem;
 }
 /* 問題 */
+#show {
+	position: absolute;
+	top: -20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #303030;
+	display: inline-block;
+	padding: 0.7rem 2rem;
+
+	text-decoration: none;
+	border: none;
+	color: #ECECEC;
+	transition: .2s;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+	letter-spacing: 1em;
+	text-indent: 1em;
+}
+#show:hover {
+	background-color: #898989;
+}
 .box {
 	display: table;
 	text-align: center;
@@ -74,27 +96,24 @@ main {
 	align-items: center;
 	background-color: #F3F3F3;
 }
-button {
-	position: absolute;
-	top: -20px;
-	left: 50%;
-  transform: translateX(-50%);
-	background-color: #303030;
-	display: inline-block;
-  padding: 0.7rem 2rem;
-
-  text-decoration: none;
-	border: none;
-  color: #ECECEC;
-  transition: .2s;
-	font-family: 'Noto Sans JP', sans-serif;
-	font-weight: 300;
-	font-size: 20px;
-	letter-spacing: 1em;
-	text-indent: 1em;
+.filter-actions {
+	display: flex;
+	gap: 0.6rem;
+	margin-bottom: 1rem;
 }
-button:hover{
-	background-color: #898989;
+.filter-actions button {
+	position: static;
+	transform: none;
+	padding: 0.4rem 0.8rem;
+	background-color: #e0e0e0;
+	color: #303030;
+	border: 1px solid #b0b0b0;
+	font-size: 1.2rem;
+	letter-spacing: 0.1rem;
+	text-indent: 0;
+}
+.filter-actions button:hover {
+	background-color: #d0d0d0;
 }
 #eq {
 	display: table-cell;
