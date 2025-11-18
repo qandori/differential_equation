@@ -8,53 +8,53 @@ const integralsData = [
   {
     expression: String.raw`\frac{dy}{dx} + y = 0`,
     link: 0,
-    tags: ['同次形(1階線形定数係数)'],
+    tags: ['線形'],
     difficulty: '初級'
   },
   {
     expression: String.raw`\frac{d^2 y}{dx^2} + y = 0`,
     link: 0,
-    tags: ['同次形(2階線形定数係数)'],
+    tags: ['線形'],
     difficulty: '初級'
   },
   {
     expression: String.raw`x\frac{dy}{dx} + y = 0`,
     link: 0,
-    tags: ['同次形(オイラー型1階)'],
+    tags: ['同次形'],
     difficulty: '初級'
   },
   {
     expression: String.raw`\frac{dy}{dx} + 3y = e^{2x}`,
     link: 0,
-    tags: ['定数変化法(1階線形)'],
+    tags: ['定数変化法'],
     difficulty: '初級'
   },
   {
     expression: String.raw`\frac{dy}{dx} + \frac{1}{x}y = x^2`,
     link: 0,
-    tags: ['定数変化法(変数係数)'],
+    tags: ['定数変化法'],
     difficulty: '中級'
   },
   {
     expression: String.raw`\frac{d^2 y}{dx^2} + 4y = \sin 2x`,
     link: 0,
-    tags: ['定数変化法(2階線形定数係数)'],
+    tags: ['定数変化法'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} = y(1-y)`,
+    expression: String.raw`2x\frac{dy}{dx}+y-3xy^2=0`,
     link: 0,
     tags: ['ベルヌーイ型'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} = y^2 + x`,
+    expression: String.raw`\frac{dy}{dx} = (y-4x+1)^2`,
     link: 0,
     tags: ['リッカチ型'],
     difficulty: '上級'
   },
   {
-    expression: String.raw`y = x\frac{dy}{dx} + x^2`,
+    expression: String.raw`y = 2x\frac{dy}{dx}+\left(\frac{dy}{dx}\right)^2`,
     link: 0,
     tags: ['ダランベール型'],
     difficulty: '上級'
@@ -62,37 +62,37 @@ const integralsData = [
   {
     expression: String.raw`\frac{dy}{dx} = x y`,
     link: 0,
-    tags: ['その他(変数分離形)'],
+    tags: ['変数分離形'],
     difficulty: '初級'
   },
   {
     expression: String.raw`\frac{dy}{dx} = \frac{1}{y+x}`,
     link: 0,
-    tags: ['その他(変数分離形)'],
+    tags: ['変数分離形'],
     difficulty: '中級'
   },
   {
     expression: String.raw`x^2\frac{d^2 y}{dx^2} + x\frac{dy}{dx} - y = 0`,
     link: 0,
-    tags: ['その他(オイラー型2階斉次)'],
+    tags: ['オイラー型'],
     difficulty: '中級'
   },
   {
     expression: String.raw`\frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0`,
     link: 0,
-    tags: ['同次形(2階線形定数係数)'],
+    tags: ['同次形'],
     difficulty: '中級'
   },
   {
     expression: String.raw`\frac{dy}{dx} = \sin x - y`,
     link: 0,
-    tags: ['定数変化法(1階線形)'],
+    tags: ['定数変化法'],
     difficulty: '初級'
   },
   {
     expression: String.raw`\frac{d^2 y}{dx^2} - y = e^{x}`,
     link: 0,
-    tags: ['定数変化法(2階線形定数係数)'],
+    tags: ['定数変化法'],
     difficulty: '中級'
   }
 ];
