@@ -100,6 +100,24 @@ const integralsData = [
     link: 0,
     tags: ['定数変化法'],
     difficulty: '中級'
+  },
+  {
+    expression: String.raw`\frac{d y}{dx}+2xy-x^3y^2=0`,
+    link: 0,
+    tags: ['ベルヌーイ型'],
+    difficulty: '上級'
+  },
+  {
+    expression: String.raw`x\frac{d y}{dx}+\frac1{\frac{d y}{dx}}-y=0`,
+    link: 0,
+    tags: ['その他'],
+    difficulty: '上級'
+  },
+  {
+    expression: String.raw`\frac{d y}{dx}-\frac{y}x-\frac{y^3}x=0`,
+    link: 0,
+    tags: ['その他'],
+    difficulty: '中級'
   }
 ];
 
