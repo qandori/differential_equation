@@ -118,7 +118,13 @@ const integralsData = [
     link: 0,
     tags: ['その他'],
     difficulty: '中級'
-  }
+  },
+  {
+    expression: String.raw`(x+y-1)\frac{d y}{dx}-x+y-1=0`,
+    link: 0,
+    tags: ['同次形'],
+    difficulty: '中級'
+  },
 ];
 
 // ES modules (import/export) は file:// で開いた際に CORS 制約に引っかかるため、
