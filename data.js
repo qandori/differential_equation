@@ -6,129 +6,135 @@
 // ブラウザ上で直接開いても読み込めるようにグローバル変数で公開する
 const integralsData = [
   {
-    expression: String.raw`\frac{dy}{dx} + y = 0`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x} + y = 0`,
     link: 0,
     tags: ['線形'],
     difficulty: '初級'
   },
   {
-    expression: String.raw`\frac{d^2 y}{dx^2} + y = 0`,
+    expression: String.raw`\frac{\mathrm{d}^2 y}{\mathrm{d}x^2} + y = 0`,
     link: 0,
     tags: ['線形'],
     difficulty: '初級'
   },
   {
-    expression: String.raw`x\frac{dy}{dx} + y = 0`,
+    expression: String.raw`x\frac{\mathrm{d}y}{\mathrm{d}x} + y = 0`,
     link: 0,
     tags: ['変数分離形'],
     difficulty: '初級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} + 3y = e^{2x}`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x} + 3y = e^{2x}`,
     link: 0,
     tags: ['定数変化法'],
     difficulty: '初級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} + \frac{1}{x}y = x^2`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x} + \frac{1}{x}y = x^2`,
     link: 0,
     tags: ['定数変化法'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{d^2 y}{dx^2} + 4y = \sin 2x`,
+    expression: String.raw`\frac{\mathrm{d}^2 y}{\mathrm{d}x^2} + 4y = \sin 2x`,
     link: 0,
     tags: ['定数変化法'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`2x\frac{dy}{dx}+y-3xy^2=0`,
+    expression: String.raw`2x\frac{\mathrm{d}y}{\mathrm{d}x}+y-3xy^2=0`,
     link: 0,
     tags: ['ベルヌーイ型'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} = (y-4x+1)^2`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x} = (y-4x+1)^2`,
     link: 0,
     tags: ['リッカチ型'],
     difficulty: '上級'
   },
   {
-    expression: String.raw`y = 2x\frac{dy}{dx}+\left(\frac{dy}{dx}\right)^2`,
+    expression: String.raw`y = 2x\frac{\mathrm{d}y}{\mathrm{d}x}+\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2`,
     link: 0,
     tags: ['ダランベール型'],
     difficulty: '上級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} = x y`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x} = x y`,
     link: 0,
     tags: ['変数分離形'],
     difficulty: '初級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} = \frac{1}{y+x}`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{1}{y+x}`,
     link: 0,
     tags: ['変数分離形'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`x^2\frac{d^2 y}{dx^2} + x\frac{dy}{dx} - y = 0`,
+    expression: String.raw`x^2\frac{\mathrm{d}^2 y}{\mathrm{d}x^2} + x\frac{\mathrm{d}y}{\mathrm{d}x} - y = 0`,
     link: 0,
     tags: ['オイラー型'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{d^2 y}{dx^2} + 2\frac{dy}{dx} + y = 0`,
+    expression: String.raw`\frac{\mathrm{d}^2 y}{\mathrm{d}x^2} + 2\frac{\mathrm{d}y}{\mathrm{d}x} + y = 0`,
     link: 0,
     tags: ['線形'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{dy}{dx}=\frac{x^2+y^2}{xy}`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{x^2+y^2}{xy}`,
     link: 0,
     tags: ['同次形'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{dy}{dx} = \sin x - y`,
+    expression: String.raw`\frac{\mathrm{d}y}{\mathrm{d}x} = \sin x - y`,
     link: 0,
     tags: ['定数変化法'],
     difficulty: '初級'
   },
   {
-    expression: String.raw`\frac{d^2 y}{dx^2} - y = e^{x}`,
+    expression: String.raw`\frac{\mathrm{d}^2 y}{\mathrm{d}x^2} - y = e^{x}`,
     link: 0,
     tags: ['定数変化法'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{d y}{dx}+2xy-x^3y^2=0`,
+    expression: String.raw`\frac{\mathrm{d} y}{\mathrm{d}x}+2xy-x^3y^2=0`,
     link: 0,
     tags: ['ベルヌーイ型'],
     difficulty: '上級'
   },
   {
-    expression: String.raw`x\frac{d y}{dx}+\frac1{\frac{d y}{dx}}-y=0`,
+    expression: String.raw`x\frac{\mathrm{d} y}{\mathrm{d}x}+\frac1{\frac{\mathrm{d} y}{\mathrm{d}x}}-y=0`,
     link: 0,
     tags: ['その他'],
     difficulty: '上級'
   },
   {
-    expression: String.raw`\frac{d y}{dx}-\frac{y}x-\frac{y^3}x=0`,
+    expression: String.raw`\frac{\mathrm{d} y}{\mathrm{d}x}-\frac{y}x-\frac{y^3}x=0`,
     link: 0,
     tags: ['その他'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`(x+y-1)\frac{d y}{dx}-x+y-1=0`,
+    expression: String.raw`(x+y-1)\frac{\mathrm{d} y}{\mathrm{d}x}-x+y-1=0`,
     link: 0,
     tags: ['同次形'],
     difficulty: '中級'
   },
   {
-    expression: String.raw`\frac{d}{dx}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}=\begin{pmatrix}1 & -1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}`,
+    expression: String.raw`\frac{\mathrm{d}}{\mathrm{d}x}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}=\begin{pmatrix}1 & -1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}`,
     link: 0,
     tags: ['線形'],
+    difficulty: '上級'
+  },
+  {
+    expression: String.raw`\frac{\mathrm{d}}{\mathrm{d}x}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}=\begin{pmatrix}1 & -1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}`,
+    link: 0,
+    tags: ['変数分離形'],
     difficulty: '上級'
   },
 ];

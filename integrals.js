@@ -44,6 +44,9 @@ if (
         activeTags.delete(tag);
       }
     });
+    // 初期状態は全選択
+    checkbox.checked = true;
+    activeTags.add(tag);
     tagCheckboxes.push(checkbox);
 
     const tagName = document.createElement('span');
@@ -72,6 +75,9 @@ if (
         activeDifficulties.delete(level);
       }
     });
+    // 初期状態は全選択
+    checkbox.checked = true;
+    activeDifficulties.add(level);
     difficultyCheckboxes.push(checkbox);
 
     const name = document.createElement('span');
