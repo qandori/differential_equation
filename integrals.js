@@ -132,7 +132,7 @@ if (
     const pool = getFilteredData();
 
     if (pool.length === 0) {
-      equation.textContent = '解法タグと難易度の組み合わせに該当する問題がありません。選択を見直してください。';
+      equation.textContent = '解法タグと難易度の組み合わせに該当する問題がありません。選択を増やしてください。';
       answerContainer.style.display = 'none';
       return;
     }
