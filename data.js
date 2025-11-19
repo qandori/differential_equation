@@ -125,6 +125,12 @@ const integralsData = [
     tags: ['同次形'],
     difficulty: '中級'
   },
+  {
+    expression: String.raw`\frac{d}{dx}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}=\begin{pmatrix}1 & -1 \\ 1 & 3 \end{pmatrix}\begin{pmatrix}y_1 \\ y_2 \end{pmatrix}`,
+    link: 0,
+    tags: ['線形'],
+    difficulty: '上級'
+  },
 ];
 
 // ES modules (import/export) は file:// で開いた際に CORS 制約に引っかかるため、
